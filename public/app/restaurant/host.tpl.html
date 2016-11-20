@@ -1,0 +1,73 @@
+<link rel="stylesheet" type="text/css" ng-href="public/css/restaurant/host.css">
+<ng-include src="'public/app/restaurant/header.tpl.html'"></ng-include>
+
+<div id="host-wrap">
+  <div id="date-selection" ng-controller="dateSelectionController">
+    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" on-open-focus="true" ng-model="date.selected" is-open="status.opened" show-button-bar="false" min-date="minDate" max-date="maxDate" datepicker-options="options" ng-required="true" close-text="Close" />
+    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+    <button type="button" class="btn btn-default" ng-click="date.today()">Today</button>
+  </div>
+
+  <div id="reservations">
+  <a href ng-click="select(newReservation)"><div ng-class="{selected : selectedReservation == newReservation}" class="reservation-card button">New Reservation</div></a>
+    <h2>Scheduled</h2>
+    <div ng-repeat="reservation in reservations | filter: {state_id: 1} | orderBy:'time'">
+      <a href ng-click="select(reservation)">
+        <ng-include src="'public/app/restaurant/reservation-card.tpl.html'"></ng-include>
+      </a>
+    </div>
+    <h2>Seated</h2>
+    <div ng-repeat="reservation in reservations | filter: {state_id: 4} | orderBy:'time'">
+      <a href ng-click="select(reservation)">
+        <ng-include src="'public/app/restaurant/reservation-card.tpl.html'"></ng-include>
+      </a>
+    </div>
+  </div>
+
+  <div id="reservation-detail">
+    <input id="selected-name" placeholder="Party Name" ng-readonly="!editable" ng-class="{'editing' : editable}" ng-model="selectedReservation.party_name"></input>
+    <div id="selected-basic-info">
+      <select id="selected-size" ng-disabled="!editable" ng-class="{'editing' : editable}" ng-model="selectedReservation.party_size" convert-to-number>
+        <option value="1">1 Person</option>
+        <option value="2">2 People</option>
+        <option value="3">3 People</option>
+        <option value="4">4 People</option>
+        <option value="5">5 People</option>
+        <option value="6">6 People</option>
+        <option value="7">7 People</option>
+        <option value="8">8 People</option>
+      </select>
+      <select id="selected-time" ng-disabled="!editable" ng-class="{'editing' : editable}" ng-model="selectedReservation.time">
+        <option value="17:00:00">5:00 PM</option>
+        <option value="17:30:00">5:30 PM</option>
+        <option value="18:00:00">6:00 PM</option>
+        <option value="18:30:00">6:30 PM</option>
+        <option value="19:00:00">7:00 PM</option>
+        <option value="19:30:00">7:30 PM</option>
+        <option value="20:00:00">8:00 PM</option>
+        <option value="20:30:00">8:30 PM</option>
+        <option value="21:00:00">9:00 PM</option>
+        <option value="21:30:00">9:30 PM</option>
+        <option value="22:00:00">10:00 PM</option>
+        <option value="22:30:00">10:30 PM</option>
+        <option value="23:00:00">11:00 PM</option>
+        <option value="23:30:00">11:30 PM</option>
+      </select>
+        <div id="selected-date" ng-controller="dateSelectionController">
+          <input ng-model="selectedReservation.date" js-date-to-iso ng-disabled="!editable" ng-class="{'editing' : editable}" type="text" class="form-control" uib-datepicker-popup="{{format}}" on-open-focus="true" is-open="status.opened" show-button-bar="false" min-date="minDate" max-date="maxDate" datepicker-options="options" ng-required="true" close-text="Close" />
+          <button id="datepick-button" ng-show="editable" type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+        </div>
+    </div>
+    <div id="selected-contact-info">
+      <input id="selected-email" placeholder="Guest Email" ng-readonly="!editable" ng-class="{'editing' : editable}" ng-model="selectedReservation.guest_email"></input>
+      <input id="selected-phone" placeholder="Guest Phone" ng-readonly="!editable" ng-class="{'editing' : editable}" ng-model="selectedReservation.guest_phone"></input>
+    </div>
+    <textarea id="selected-requests" ng-readonly="!editable" placeholder="Special Requests" ng-readonly="!editable" ng-class="{'editing' : editable}" ng-model="selectedReservation.requests"></textarea>
+    <div ng-hide="selectedReservation.state_id == 4" id="selected-buttons">
+      <a href ng-show="!editable" ng-class="{'disabled': !editable}" ng-click="seat(selectedReservation)"><div class="button" id="selected-seat-button">Seat</div></a>
+      <a href ng-show="!editable" ng-class="{'disabled': !editable}" ng-click="cancel(selectedReservation)"><div class="button" id="selected-cancel-button">Cancel</div></a>
+      <a href ng-show="!editable" ng-click="toggleEdit()"><div class="button" id="selected-edit-button">Edit</div></a>
+      <a href ng-show="editable" ng-click="toggleEdit(); save(selectedReservation)"><div class="button" id="selected-edit-button">Save</div></a>
+    </div>
+  </div>
+</div>

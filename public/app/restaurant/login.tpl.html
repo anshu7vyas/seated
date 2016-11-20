@@ -1,0 +1,9 @@
+<ng-include src="'public/app/restaurant/header.tpl.html'"></ng-include>
+<link rel="stylesheet" type="text/css" ng-href="public/css/restaurant/login.css">
+
+<div id="login">
+  <h2>sign in to seated</h2>
+  <input type="text" ng-model="user.username" placeholder="username" required="required"/>
+  <input type="password" ng-model="user.password" placeholder="password" required="required"/>
+  <a href ng-click="login()"><div class="button">Sign in</div></a>
+</div>

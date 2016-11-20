@@ -1,0 +1,67 @@
+<link rel="stylesheet" type="text/css" ng-href="public/css/diner/restaurant-view.css">
+<ng-include src="'public/app/diner/header.tpl.html'"></ng-include>
+
+<div id="restaurant">
+	<div id="restaurant-basic-info">
+		<img id="restaurant-img" ng-src="{{restaurant.cover_img}}"/>
+		<div id="text-info">
+			<div id="restaurant-name"><h1>{{restaurant.name}}</h1></div>
+			<div ng-if="restaurant.categories.length" class="restaurant-cuisines">
+		    <span>Cuisine:</span>
+		    <span ng-repeat="category in restaurant.categories">
+		      {{category.labelText}}
+		    </span>
+		  </div>
+			<div id="restaurant-price"><span>Price Range: {{restaurant.price_range | money}}</span></div>
+			<div id="restaurant-location">
+				<div><span>{{restaurant.location.street}}</span></div>
+				<span>{{restaurant.location.city}}, {{restaurant.location.state}} {{restaurant.location.zip}}</span>
+				<div><span><a target="_blank" ng-href="http://maps.google.com/maps/dir/Current+Location/{{restaurant.location.street}}+{{restaurant.location.city}}">Directions</a></span></div>
+			</div>
+		</div>
+	</div>
+	<div id="restaurant-detail">
+		<div id="reservation-selection">
+			<div id="search-bar-wrap">
+				<ng-include src="'public/app/diner/search-bar.tpl.html'"></ng-include>
+			</div>
+			<h3>{{blocks.length}} reservations available to seat a party of {{searchParams.party_size}} around {{searchParams.time | humanTime}} on {{searchParams.date | humanDate : 'full'}}</h3>
+			<ul id="reservation-list">
+				<li ng-repeat="block in blocks">
+					<a href ng-click="selectReservation(block)" class="button" >{{block.time | humanTime}}</a>
+				</li>
+			</ul>
+		</div>
+		<div id="google-maps">
+			<ui-gmap-google-map center='map.map.center' zoom='map.map.zoom' options="map.options">
+				<ui-gmap-marker coords="map.marker.coords" options="map.marker.options" idkey="map.marker.id">
+		        </ui-gmap-marker>
+			</ui-gmap-google-map>
+		</div>
+
+		<div id="information">
+			<div id="basic-info">
+				<p>Hours:</p>
+				<ul>
+					<li ng-repeat="(day, hour) in restaurant.hours">
+						<span class="day">{{day | capitalizeWord}}</span>
+						<span class="hours">{{hour.opening | humanTime}} - {{hour.closing | humanTime }}</span>
+					</li>
+				</ul>
+				<p>Phone</p><span>{{restaurant.phone}}</span><br>
+				<p>Website</p><a ng-href="http://{{restaurant.url}}">{{restaurant.url}}</a>
+			</div>
+			<div id="long-description">
+				<h3>About {{restaurant.name}}</h3>
+				<p>{{restaurant.long_description}}</p>
+			</div>
+		</div>
+
+		<div id="photos">
+			<div ng-repeat="photo in restaurant.photos">
+				<img ng-src="{{photo.path}}"/>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" ng-href="public/css/diner/confirm-reservation.css">
+<ng-include src="'public/app/diner/header.tpl.html'"></ng-include>
+
+<div id="confirm-wrap">
+	<div id="confirm-header">
+		<h2>Confirm your reservation</h2>
+	</div>
+
+	<div id="reservation-info-card">
+		<div id="reservation-block-img">
+			<img ng-src="{{restaurant.cover_img}}">
+		</div>
+
+		<div class="guests">
+			<h6>Guests</h6>
+			<h4>{{reservation.party_size}}</h4>
+		</div>
+
+		<div class="reservation-date">
+			<h6>Date</h6>
+			<h4>{{reservation.date | humanDate : 'full'}}</h4>
+		</div>
+
+		<div class="reservation-time">
+			<h6>Time</h6>
+			<h4>{{reservation.time | humanTime}}</h4>
+		</div>
+
+		<div class="reservation-restaurant">
+			<h6>Restaurant</h6>
+			<h4><a ng-href="#/restaurant/{{restaurant.name | toDashCase}}">{{restaurant.name}}</a></h4>
+		</div>
+	</div>
+
+	<div ng-if="!confirmed" id="form-confirm-reservation">
+		<div id="name">
+			<input ng-model="reservation.party_name" type="text" id="party-name" placeholder="Party Name">
+		</div>
+		<div id="phone">
+			<input ng-model="reservation.guest_phone" type="text" id="phone-number" placeholder="Phone Number">
+		</div>
+		<div id="email">
+			<input ng-model="reservation.guest_email" type="text" id="email" placeholder="Email">
+		</div>
+		<div id="special-requests">
+			<textarea ng-model="reservation.requests" id="special-requests" rows="2" placeholder="Any special requests (optional)"></textarea>
+		</div>
+		<input type="submit" ng-click="reserve()" value="Confirm Reservation" id="confirm-reservation" class="button">
+	</div>
+
+	<div ng-if="confirmed" id="confirmation">
+		<h3>Your Reservation has been made!</h3>
+	</div>
+</div>

@@ -1,0 +1,36 @@
+<link rel="stylesheet" type="text/css" ng-href="public/css/diner/splash.css">
+<ng-include src="'public/app/diner/header.tpl.html'"></ng-include>
+
+<div id="splash-welcome">
+  <img src="public/images/fc.jpg">
+  <div id="splash-text">
+    <h1>Welcome to Seated</h1>
+    <p>Reserve a table and be seated right away</p>
+  </div>
+</div>
+
+
+<div id="city-selector">
+  <div id="city-search">
+    <h3>Select from our most popular cities below, or search for one to get started...</h3>
+    <input ng-keyup="$event.keyCode == 13 && selectCity(citySelection.city)" id="city-search-field" type="search" ng-model="citySelection" uib-typeahead="city as city.city for city in cities| filter: $viewValue | limitTo:7" placeholder="San Francisco" class="form-control" typeahead-no-results="ng-show" typeahead-loading="loadingCities" typeahead-no-results="noResults" typeahead-min-length="2" typeahead-select-on-exact="true"/>
+    <i ng-show="loadingCities" class="glyphicon glyphicon-refresh"></i>
+    <div ng-show="noResults"><i class="glyphicon glyphicon-remove"></i> No Results Found</div>
+  </div>
+  <div id="city-links">
+    <div ng-repeat="city in cities | orderBy: '-num_restaurants' | limitTo: 2">
+      <a href ng-click="selectCity(city.city);">
+        <div class="city-selection">
+          <img ng-src="{{city.img_path}}">
+          <div class="shade-box"></div>
+          <p>{{city.city}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="restaurant-router">
+  <h2>Are you a restaurant looking to use Seated's services?</h2>
+  <a href="restaurants/"><div class="button">Explore our app for restaurant reservation managment</div></a>
+</div>

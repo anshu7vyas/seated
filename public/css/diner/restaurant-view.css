@@ -1,0 +1,96 @@
+#restaurant{
+  padding: 6rem 2%;
+}
+
+#restaurant-basic-info{
+  margin: 2%;
+  background-color: #FFF8F8;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #AAA;
+  overflow: hidden;
+  height: 15em;
+}
+
+#text-info{
+  margin-left: 2%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#text-info span{
+  font-size: 1.2em;
+}
+
+#restaurant-img{
+  display: inline-block;
+  height: 100%;
+}
+
+#reservation-selection{
+  background-color: #FFF8F8;
+  padding: 2%;
+  margin: 2% 0;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #AAA;
+}
+
+#reservation-selection li{
+  display: inline-block;
+}
+
+#reservation-selection li a{
+  padding: 10px 20px 10px 20px;
+  margin: 10px;
+}
+
+#reservation-list{
+  margin: 0;
+  padding: 1%;
+}
+
+#restaurant-detail{
+  margin: 2%;
+}
+
+#google-maps {
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #AAA;
+}
+
+.angular-google-map-container {
+	height: 300px;
+}
+
+#information{
+  margin: 2% 0;
+  background-color: #FFF8F8;
+  padding: 2%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #AAA;
+}
+
+#basic-info{
+  display: inline-block;
+  width: 50%;
+}
+
+#information ul{
+  padding: 0;
+}
+
+#information .day{
+  display: inline-block;
+  width: 6rem;
+}
+
+#information #basic-info p{
+  display: inline-block;
+  width: 6rem;
+}
+
+#long-description{
+  display: inline-block;
+  width: 40%;
+  vertical-align: top;
+}

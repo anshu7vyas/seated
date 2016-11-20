@@ -1,0 +1,59 @@
+.restaurant{
+  margin:1%;
+  border-radius: 5px;
+  background-color: #FFF8F8;
+  padding: 1%;
+  width: 45%;
+  min-width: 650px;
+  display: inline-block;
+  box-shadow: 0px 0px 5px #AAA;
+}
+
+.cover-img-wrap{
+  display: inline-block;
+  height: 10em;
+  width: 10em;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.restaurant-image{
+  height: 12em;
+  width: auto;
+}
+
+.restaurant-info{
+  height: 100%;
+  width: 30%;
+  vertical-align: top;
+  display: inline-block;
+  padding-left: 2%;
+}
+
+.restaurant-info.blockless{
+  width: 70%;
+}
+
+.restaurant-info div{
+  margin: 1% 0;
+}
+
+.available-blocks{
+  position: relative;
+  height: 100%;
+  display: inline-block;
+  float: right;
+  width: 40%;
+  margin: 0;
+  padding: 0;
+}
+
+.available-blocks li{
+  display: inline-block;
+  margin: 5% 3%;
+}
+
+.available-blocks li a{
+  padding: 10px 20px 10px 20px;
+  /*margin: 10px;*/
+}

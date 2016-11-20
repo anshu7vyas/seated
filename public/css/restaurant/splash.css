@@ -1,0 +1,65 @@
+#splash-wrap {
+	padding: 6rem 0 0 0;
+}
+
+#splash .button{
+	margin: 2%;
+	width: 30%;
+	display: inline-block;
+}
+
+#main-img{
+	width: 100%;
+	text-align: center;
+}
+
+#main-img img{
+	display: inline-block;
+	width: 70%;
+	box-shadow: 0px 0px 5px #AAA;
+}
+
+aside {
+	margin: 0 1.5% 24px 1.5%;
+}
+
+section {
+	text-align: center;
+	width: 100%;
+	padding: 2%;
+	margin: 0;
+	max-width: none;
+	background-color: #EBE4E4;
+}
+
+#features, #marketing {
+	background-color: #CFC9C9;
+}
+
+select, input{
+	font-size: 1.2em;
+  display: inline-block;
+  text-align: center;
+  border-radius: 5px;
+  width: 21%;
+  min-width: 150px;
+  margin: 1%;
+  height: 60px;
+  line-height: 40px;
+  border: none;
+  -webkit-appearance: none;
+}
+
+#restaurant-name{
+	width: 90%;
+}
+
+textarea{
+	margin: 1%;
+  width: 90%;
+  border-radius: 5px;
+}
+
+#signupForm .button{
+	width: 90%;
+}

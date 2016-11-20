@@ -1,0 +1,37 @@
+<link rel="stylesheet" type="text/css" ng-href="public/css/diner/search-bar.css">
+<div id="search-bar" ng-class="{'no-text': !searchText}" ng-controller="searchBarController">
+  <select id="search-size" ng-model="searchParams.party_size">
+    <option value="1">1 Person</option>
+    <option value="2">2 People</option>
+    <option value="3">3 People</option>
+    <option value="4">4 People</option>
+    <option value="5">5 People</option>
+    <option value="6">6 People</option>
+    <option value="7">7 People</option>
+    <option value="8">8 People</option>
+  </select>
+  <div id="search-date">
+    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" on-open-focus="false" ng-model="searchParams.date" is-open="status.opened" show-button-bar="false" min-date="minDate" max-date="maxDate" datepicker-options="options" ng-required="true" close-text="Close" />
+    <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+  </div>
+  <select id="search-time" ng-model="searchParams.time">
+    <option value="17:00:00">5:00 PM</option>
+    <option value="17:30:00">5:30 PM</option>
+    <option value="18:00:00">6:00 PM</option>
+    <option value="18:30:00">6:30 PM</option>
+    <option value="19:00:00">7:00 PM</option>
+    <option value="19:30:00">7:30 PM</option>
+    <option value="20:00:00">8:00 PM</option>
+    <option value="20:30:00">8:30 PM</option>
+    <option value="21:00:00">9:00 PM</option>
+    <option value="21:30:00">9:30 PM</option>
+    <option value="22:00:00">10:00 PM</option>
+    <option value="22:30:00">10:30 PM</option>
+    <option value="23:00:00">11:00 PM</option>
+    <option value="23:30:00">11:30 PM</option>
+  </select>
+  <div ng-if="searchText" id="search-text">
+    <input type="search" ng-model="search.searchQuery" uib-typeahead="keyword as keyword.value for keyword in getKeywords($viewValue)" placeholder="search for restaurants or cuisines"  typeahead-template-url="public/app/diner/search-value-custom.tpl.html" typeahead-no-results="ng-show" typeahead-loading="searching" typeahead-no-results="noResults" typeahead-min-length="2" typeahead-select-on-exact="true"/>
+  </div>
+  <a href="" ng-click="search()"><div id="search-button" class="button">Search</div></a>
+</div>

@@ -1,0 +1,202 @@
+html{
+  overflow: hidden;
+}
+
+#host-wrap{
+  padding-top: 6rem;
+}
+
+#date-selection{
+  text-align: center;
+  padding: 1%;
+  background-color: #CFC9C9;
+}
+
+#date-selection h2{
+  display: inline-block;
+}
+
+#date-selection input{
+  display: inline-block;
+  width: 20%;
+  vertical-align: middle;
+}
+
+#reservations{
+  display: inline-block;
+  width: 30%;
+  padding: 1%;
+  height: calc(100vh - 10rem);
+  box-shadow: 0px 0px 5px #AAA;
+  overflow-y: scroll;
+}
+
+#reservations h2{
+  margin: 0;
+  padding: 2%;
+  border-bottom: 1px solid;
+}
+
+#new-button{
+  display: block;
+}
+
+.reservation-card{
+  width: 100%;
+  display: block;
+  font-size: 1.5em;
+  background-color: #FFF8F8;
+  padding: 2%;
+  margin: 2% 0;
+  box-shadow: 0px 0px 5px #AAA;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+.reservation-card:hover{
+  background-color: #547AAD;
+  color: #FFF8F8;
+}
+
+.reservation-card.selected{
+  background-color: #547AAD;
+  color: #FFF8F8;
+}
+
+
+
+.reservation-card div{
+  display: inline-block;
+}
+
+.reservation-card .reservation-time{
+  width: 30%;
+}
+
+.reservation-card .reservation-party-name{
+  width: 25%;
+}
+
+.reservation-card .reservation-party-size{
+  float: right;
+  text-align: right;
+  padding-right: 2%;
+  width: 20%;
+}
+
+.reservation-card .reservation-notes-indicator{
+  float: right;
+  width: 10%;
+  border: 1px solid;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#reservation-detail{
+  display: inline-block;
+  width: 66%;
+  margin: 1% 2%;
+  padding: 1%;
+  float: right;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #AAA;
+  background-color: #FFF8F8;
+}
+
+#selected-name{
+  width: 90%;
+  font-size: 1.5em;
+  display: block;
+  text-align: center;
+  background-color: #EBE4E4;
+  border-radius: 5px;
+  margin: 1%;
+  height: 60px;
+  line-height: 40px;
+  border: none;
+  -webkit-appearance: none;
+}
+
+#selected-basic-info input, #selected-basic-info select{
+  width: 20%;
+  min-width: 150px;
+  font-size: 1.5em;
+  display: inline-block;
+  text-align: center;
+  background-color: #EBE4E4;
+  border-radius: 5px;
+  margin: 1%;
+  height: 60px;
+  line-height: 40px;
+  border: none;
+  -webkit-appearance: none;
+}
+
+#selected-basic-info select{
+  text-indent: 25%;
+}
+
+#selected-contact-info > input, #selected-contact-info > select{
+  font-size: 1.5em;
+  display: inline-block;
+  text-align: center;
+  background-color: #EBE4E4;
+  border-radius: 5px;
+  width: 44%;
+  min-width: 150px;
+  margin: 1%;
+  height: 60px;
+  line-height: 40px;
+  border: none;
+  -webkit-appearance: none;
+}
+
+#selected-date{
+  width: 47%;
+  min-width: 350px;
+  display: inline-block;
+}
+
+#selected-date input{
+  width: 80%;
+}
+#selected-date #datepick-button{
+  vertical-align: bottom;
+  width: 15%;
+  font-size: 1.5em;
+  display: inline-block;
+  text-align: center;
+  background-color: #EBE4E4;
+  border-radius: 5px;
+  margin: 1%;
+  height: 60px;
+  line-height: 40px;
+  border: none;
+  -webkit-appearance: none;
+}
+
+#selected-requests{
+  margin: 1%;
+  width: 90%;
+  background-color: #EBE4E4;
+  border-radius: 5px;
+}
+
+#selected-buttons{
+  width: 90%;
+}
+
+#selected-buttons div{
+  text-align: center;
+  margin: 1%;
+  width: 31%;
+  font-size: 1.5em;
+}
+
+.editing{
+  color: #547AAD;
+}
+
+.disabled{
+  color: gray;
+}

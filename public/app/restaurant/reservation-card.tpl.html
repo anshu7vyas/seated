@@ -1,0 +1,6 @@
+<li class="reservation-card button" ng-class="{selected : selectedReservation == reservation}">
+  <div class="reservation-time">{{reservation.time | humanTime }}</div>
+  <div class="reservation-party-name">{{reservation.party_name}}</div>
+  <div class="reservation-party-size">{{reservation.party_size}}</div>
+  <div ng-if="reservation.requests" class="reservation-notes-indicator">!</div>
+</li>

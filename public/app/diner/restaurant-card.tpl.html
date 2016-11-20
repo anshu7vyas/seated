@@ -1,0 +1,22 @@
+<a href ng-click="selectRestaurant(restaurant)">
+  <div class="cover-img-wrap">
+    <img class="restaurant-image" ng-src="{{restaurant.cover_img}}"/>
+  </div>
+</a>
+<div class="restaurant-info" ng-class="{'blockless' : !restaurant.blocks}">
+  <h2><a href ng-click="selectRestaurant(restaurant)" class="restaurant-name">{{restaurant.name}}</a></h2>
+  <div class="restaurant-short-desc">{{restaurant.short_description}}</div>
+  <div class="restaurant-price">Price Range: {{restaurant.price_range | money}}</div>
+  <div class="restaurant-location">{{restaurant.location.street}}</div>
+  <div ng-if="restaurant.categories.length" class="restaurant-cuisines">
+    <span>Cuisine:</span>
+    <span ng-repeat="category in restaurant.categories">
+      {{category.labelText}}
+    </span>
+  </div>
+</div>
+<ul ng-if="restaurant.blocks" class="available-blocks">
+  <li ng-repeat="block in restaurant.blocks">
+    <a href class="button" ng-click="selectReservation(restaurant, block)">{{block.time | humanTime}}</a>
+  </li>
+</ul>

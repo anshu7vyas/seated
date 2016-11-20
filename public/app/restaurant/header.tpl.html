@@ -1,0 +1,14 @@
+<div id="header" ng-controller="headerController">
+  <a href="./#/"><h1>Seated</h1></a>
+  <a ng-if="restaurant.name" ng-href="#/restaurant/{{restaurant.name | toDashCase}}" target="_blank"><h3 id="city-header" ng-if="restaurant.name" ng-bind="restaurant.name"></h3></a>
+  <nav id="header-nav">
+      <ul>
+        <a href ng-click="login()" ng-if="!current_user"><li id="login" class="button">login</li></a>
+        <a href ng-click="route('host')" ng-if="current_user"><li id="route-host" class="button">host</li></a>
+        <a href ng-click="route('admin')" ng-if="current_user.type==1"><li id="route-host" class="button">admin</li></a>
+        <a href ng-click="logout()" ng-if="current_user"><li id="logout" class="button">logout</li></a>
+        <a href="contact"><li class="button">contact & support</li></a>
+      </ul>
+  </nav>
+  <div id="disclaimer"><h5>Disclaimer: SFSU/Fulda Academic Project for Demonstration Only</h5></div>
+</div>

@@ -1,0 +1,21 @@
+<link rel="stylesheet" type="text/css" ng-href="public/css/diner/search-bar.css">
+<link rel="stylesheet" type="text/css" ng-href="public/css/diner/city.css">
+<link rel="stylesheet" type="text/css" ng-href="public/css/diner/restaurant-card.css">
+<ng-include src="'public/app/diner/header.tpl.html'"></ng-include>
+
+<div id="search-window">
+	<img ng-src="public/images/fc.jpg">
+	<div id="search-bar-wrap">
+		<ng-include src="'public/app/diner/search-bar.tpl.html'"></ng-include>
+	</div>
+</div>
+
+<div id="popular-box">
+	<div id="action-bumber">
+		<h2>Search for reservation times above or explore popular restaurants in {{city}}.</h2>
+	</div>
+
+	<div class="restaurant" ng-repeat="restaurant in popular">
+		<ng-include src="'public/app/diner/restaurant-card.tpl.html'"></ng-include>
+	</div>
+</div>

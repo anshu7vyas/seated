@@ -1,0 +1,101 @@
+#confirm-wrap{
+  padding: 6em 2%;
+}
+
+#confirm-header {
+  margin: 1%;
+	width: 100%;
+  margin-bottom: 0;
+}
+
+#reservation-info-card {
+  display: block;
+  font-size: 1em;
+  width: 50rem;
+  min-width: 500px;
+	background-color: #FFF8F8;
+  margin: 1%;
+  padding-left: 1%;
+}
+
+#reservation-info-card div{
+  display: inline-block;
+  text-align: center;
+  padding: 1% 2%;
+  vertical-align: middle;
+}
+
+#reservation-block-img{
+  height: 4em;
+
+}
+
+#reservation-block-img img{
+  height: 100%;
+}
+
+
+
+#form-confirm-reservation {
+	width: 50rem;
+  min-width: 500px;
+  margin: 1%;
+}
+
+input{
+	line-height: 22px;
+	background-color: #FFF8F8;
+	padding: 13px 13px 13px 13px;
+	margin-bottom: 10px;
+	width:100%;
+	border: none;
+}
+
+textarea {
+  background-color: #FFF8F8;
+  width: 100%;
+  height: 150px;
+  line-height: 150%;
+  padding: 13px 13px 13px 13px;
+	margin-bottom: 8px;
+  border: none;
+}
+
+.button {
+	text-align: center;
+}
+
+.reservation-block-li div{
+  display: inline-block;
+}
+
+.reservation-block-li .reservation-block-image {
+  width: 10%;
+}
+
+.reservation-block-li .guests{
+	width: 10%;
+	text-align: center;
+}
+
+.reservation-block-li .reservation-date {
+	width: 30%;
+	text-align: center;
+}
+
+.reservation-block-li .reservation-time{
+	width: 20%;
+	text-align: center;
+}
+
+.reservation-block-li .reservation-restaurant{
+  width: 20%;
+  text-align: center;
+}
+
+#confirmation{
+  margin-left: 1%;
+  padding: 1%;
+  background-color: #FFF8F8;
+  width: 50rem;
+}

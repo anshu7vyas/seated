@@ -1,0 +1,15 @@
+#search{
+  padding: 6rem 2%;
+}
+
+#search-bar-wrap{
+  padding: 2%;
+}
+
+#search-results{
+  margin: 2%;
+}
+
+#search-results div{
+  margin: 1%;
+}

@@ -1,0 +1,151 @@
+<link rel="stylesheet" type="text/css" ng-href="public/css/restaurant/splash.css">
+<ng-include src="'public/app/restaurant/header.tpl.html'"></ng-include>
+
+<div id="splash-wrap">
+	<section id="splash">
+		<h1>Seated&trade; Reservations</h1>
+		<h2>Built with Restaurants in Mind</h2>
+		<a href ng-click="scrollToForm()"><div class="button">Let's get started</div></a>
+		<div id="main-img">
+			<img ng-src="public/images/splash-1.png"/>
+		</div>
+	</section>
+
+	<section id="features">
+		<header>
+			<h2>At your service.</h2>
+			<h3>A simple host interface! loaded with essentials</h3>
+		</header>
+		<div id="features">
+			<aside>
+				<img ng-src="#"/>
+				<h4>An elegant clock</h4>
+				<p>For keeping track of time, and for reservations.</p>
+			</aside>
+			<aside>
+				<img ng-src="#"/>
+				<h4>Keep an eye out for seated diners</h4>
+				<p>Get insights on seated customers, better helping in scheduling other reservations.</p>
+			</aside>
+			<aside>
+				<img ng-src="#">
+				<h4>Reserve, modify, cancel with ease</h4>
+				<p>Everything you need, right where you want it.</p>
+			</aside>
+		</div>
+	</section>
+
+	<section id="widget">
+		<header>
+			<h2>A Seatget&trade;</h2>
+			<h3>Meet our reservation widget. Your website will love it.</h3>
+		</header>
+		<div id="widget">
+			<aside>
+				<h4>Keep your favourite customers</h4>
+				<p>Seamless reservations, right from your restaurant's website</p>
+			</aside>
+			<aside>
+				<img ng-src="#"/>
+				<h4>Your wish is its command!</h4>
+				<p>Small | Large | Vertical | Horizontal. Choose a size according to your liking.</p>
+			</aside>
+		</div>
+	</section>
+
+	<section id="marketing">
+		<header>
+			<img ng-src="#"/>
+			<div id="marketing">
+				<h2>Seated.com network</h2>
+				<h3>Seat more diners.</h3>
+			</div>
+		</header>
+		<div id="marketing-content">
+			<aside>
+				<h4>Top Notch</h4>
+				<p>Lorem ipsum dolor sit amet, nam iusto omnium explicari an, an sit aeterno detracto. Malorum euismod mei te. </p>
+			</aside>
+			<aside>
+				<h4>Something</h4>
+				<p>Ea vitae ubique eam, in nam putent oblique oportere, tempor deleniti at eam. Cu justo albucius iracundia mel, quis placerat ei vim. Est ad oblique forensibus, eu nec explicari dignissim gubergren.</p>
+			</aside>
+			<aside>
+				<h4>Genius</h4>
+				<p>Ea vitae ubique eam, in nam putent oblique oportere, tempor deleniti at eam. Cu justo albucius iracundia mel, quis placerat ei vim. Est ad oblique forensibus, eu nec explicari dignissim gubergren.</p>
+			</aside>
+		</div>
+	</section>
+
+	<section id="signupForm">
+		<header>
+			<h4>Join Us! Seat your diners gracefully.</h4>
+		</header>
+		<form id=signupForm>
+			<input ng-model="form.name" type="text" id="restaurant-name" placeholder="Restaurant Name">
+			<input ng-model="form.phone" type="text" id="phone-number" placeholder="Phone Number">
+			<input ng-model="form.email" type="text" id="email" placeholder="Email">
+			<input ng-model="form.first_name" type="text" id="owner-name-first" placeholder="First Name">
+			<input ng-model="form.last_name" type="text" id="owner-name-last" placeholder="Last Name">
+			<input ng-model="form.street" type="text" id="restaurant-street" placeholder="Street">
+			<input ng-model="form.city" type="text" id="restaurant-city" placeholder="City">
+			<select id="state" ng-model="form.state">
+				<option value="AL">Alabama</option>
+				<option value="AK">Alaska</option>
+				<option value="AZ">Arizona</option>
+				<option value="AR">Arkansas</option>
+				<option value="CA">California</option>
+				<option value="CO">Colorado</option>
+				<option value="CT">Connecticut</option>
+				<option value="DE">Delaware</option>
+				<option value="DC">District Of Columbia</option>
+				<option value="FL">Florida</option>
+				<option value="GA">Georgia</option>
+				<option value="HI">Hawaii</option>
+				<option value="ID">Idaho</option>
+				<option value="IL">Illinois</option>
+				<option value="IN">Indiana</option>
+				<option value="IA">Iowa</option>
+				<option value="KS">Kansas</option>
+				<option value="KY">Kentucky</option>
+				<option value="LA">Louisiana</option>
+				<option value="ME">Maine</option>
+				<option value="MD">Maryland</option>
+				<option value="MA">Massachusetts</option>
+				<option value="MI">Michigan</option>
+				<option value="MN">Minnesota</option>
+				<option value="MS">Mississippi</option>
+				<option value="MO">Missouri</option>
+				<option value="MT">Montana</option>
+				<option value="NE">Nebraska</option>
+				<option value="NV">Nevada</option>
+				<option value="NH">New Hampshire</option>
+				<option value="NJ">New Jersey</option>
+				<option value="NM">New Mexico</option>
+				<option value="NY">New York</option>
+				<option value="NC">North Carolina</option>
+				<option value="ND">North Dakota</option>
+				<option value="OH">Ohio</option>
+				<option value="OK">Oklahoma</option>
+				<option value="OR">Oregon</option>
+				<option value="PA">Pennsylvania</option>
+				<option value="RI">Rhode Island</option>
+				<option value="SC">South Carolina</option>
+				<option value="SD">South Dakota</option>
+				<option value="TN">Tennessee</option>
+				<option value="TX">Texas</option>
+				<option value="UT">Utah</option>
+				<option value="VT">Vermont</option>
+				<option value="VA">Virginia</option>
+				<option value="WA">Washington</option>
+				<option value="WV">West Virginia</option>
+				<option value="WI">Wisconsin</option>
+				<option value="WY">Wyoming</option>
+			</select>
+			<input ng-model="form.zip" type="text" id="zipcode" placeholder="Zip code">
+			<input ng-model="form.password" type="password" id="password" placeholder="Create a password">
+			<textarea id="comments" rows="2" placeholder="Please share any comments or additional information with us"></textarea>
+			<a href ng-click="register()"><div class="button">Send</div></a>
+		</form>
+	</section>
+</div>
