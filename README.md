@@ -11,3 +11,9 @@ Diner Home View:
 Restaurant View:
 
 ![Restaurant View](https://github.com/av-7/seated/blob/master/Screens/RestaurantView.png)
+
+## Features:
+
+- Diner Interface
+- FOH Interface
+- Seatget - An embedded widget making diner reservations from the restaurant's website.
